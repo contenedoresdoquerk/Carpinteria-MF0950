@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Mi Empresa - Inicio</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Favicon -->
-  <link rel="icon" href="https://kphoto.com/id/2215906974/vector/ico-flat-icon-design.jpg?b=1&s=612x612&w=is&k=20&c=cS4EbR2B_ea3J0qDb7Tx4MCmBEaxQigs464yLmA4ssE=" type="image/jpeg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
+  <title>Carpintería Juan - Inicio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/png" />
+  <style>
 
-  <header>
-    <h1>Carpintería Juan</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <!-- Logo enlazado a la página de inicio -->
+      <a href="index.html" class="logo-link" aria-label="Ir a Inicio">
+
+      </a>
+      <h1 class="logo">Carpintería Juan</h1>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero">
-      <h2>Bienvenido a Mi Empresa</h2>
-      <p>Ofrecemos soluciones de carpintería para tu negocio.</p>
-    </section>
+      <div class="container">
+        <h2>Bienvenido a Carpintería Juan</h2>
+        <p>Tenemos las mejores Casas Prefabricadas para Todos.</p>
+      
 
-    <h2 style="text-align:center;">Vista de la imagen</h2>
-    <div class="image-container" style="text-align:center;">
-      <img class="hero-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=100" alt="Foto decorativa" style="max-width:100%;height:auto;border-radius:8px;" />
-    </div>
+          <img class="hero-image"
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+            alt="Casa prefabricada moderna" />
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Carpintería Juan. Todos los derechos reservados.</p>
+    </div>
   </footer>
-
 </body>
+
 </html>
