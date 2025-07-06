@@ -1,59 +1,339 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carpintería Juan - Inicio</title>
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-  <!-- Hoja de estilos -->
-  <link rel="stylesheet" href="/css/style.css" />
-  <!-- Favicon -->
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/png" />
+
+  <!-- Variables CSS para el color primario -->
   <style>
-
+    :root {
+      --color-primary: #ffb300;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #fafafa;
+    }
+    .site-header {
+      background: #fff;
+      border-bottom: 2px solid var(--color-primary);
+      padding: 10px 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .main-nav a.active,
+    .main-nav a:hover {
+      color: var(--color-primary);
+    }
+    .logo-link img {
+      vertical-align: middle;
+    }
+    .logo {
+      margin: 0 0 0 10px;
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .bienvenida {
+      background: #fff8e1;
+      padding: 30px 0;
+      text-align: center;
+    }
+    .bienvenida h2 {
+      margin-top: 0;
+      color: var(--color-primary);
+    }
+    .imagen-empresa .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 40px auto;
+    }
+    .imagen-empresa figure {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow: hidden;
+      width: 320px;
+      margin: 0;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .imagen-empresa img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .imagen-empresa figcaption {
+      margin-top: 10px;
+      color: #444;
+      font-size: 1rem;
+    }
+    .site-footer {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+    /* Estilos del chatbot */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      max-height: 400px;
+      background: #fff;
+      border: 2px solid var(--color-primary);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      font-family: 'Roboto', sans-serif;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    #chatbot-header {
+      background: var(--color-primary);
+      color: white;
+      padding: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+    }
+    #chatbot-close {
+      float: right;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #chatbot-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+    .message {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+    }
+    .message.user {
+      text-align: right;
+      color: var(--color-primary);
+    }
+    .message.bot {
+      text-align: left;
+      color: #333;
+    }
+    #chatbot-form {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+    #chatbot-input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+    #chatbot-input:focus {
+      outline: none;
+    }
+    #chatbot-form button {
+      background: var(--color-primary);
+      border: none;
+      color: white;
+      padding: 0 15px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    #chatbot-form button:hover {
+      background: #e6a800;
+    }
   </style>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/png" />
 </head>
-
 <body>
   <header class="site-header">
-    <div class="container">
-      <!-- Logo enlazado a la página de inicio -->
-      <a href="index.html" class="logo-link" aria-label="Ir a Inicio">
-
+    <div class="container header-container">
+      <a href="index.html" class="logo-link" aria-label="Ir a inicio">
+        <img 
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
+          alt="Logo de Carpintería Juan" 
+          width="48" 
+          height="48" 
+        />
       </a>
       <h1 class="logo">Carpintería Juan</h1>
       <nav class="main-nav" aria-label="Navegación principal">
         <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
           <li><a href="servicios.html">Servicios</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
+  
   <main>
-    <section class="hero">
+    <section class="bienvenida">
       <div class="container">
         <h2>Bienvenido a Carpintería Juan</h2>
-        <p>Tenemos las mejores Casas Prefabricadas para Todos.</p>
-      
-
-          <img class="hero-image"
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-            alt="Casa prefabricada moderna" />
-        </div>
+        <p>Expertos en trabajos de carpintería a medida. Calidad, experiencia y compromiso para tu hogar o negocio.</p>
+      </div>
+    </section>
+    
+    <section class="imagen-empresa">
+      <div class="container">
+        <figure>
+          <img 
+            src="img/Inxenia-nave-industrial-carpinteria-bertoa-9-scaled.jpg" 
+            alt="Vista exterior de la nave industrial de Carpintería Juan" 
+            loading="lazy"
+            onerror="this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80';"
+          />
+          <figcaption>Mi Empresa</figcaption>
+        </figure>
+        <figure>
+          <img 
+            src="img/felices-companeros-de-trabajo-en-una-carpinteria-JOSEF18764.jpg" 
+            alt="Equipo de trabajo sonriente en el taller de carpintería" 
+            loading="lazy"
+            onerror="this.src='https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80';"
+          />
+          <figcaption>Somos un equipo</figcaption>
+        </figure>
+        <figure>
+          <img 
+            src="img/imagen-carpinteria-CAMARAS-DE-SECADO.jpg" 
+            alt="Cámaras de secado para madera en la carpintería" 
+            loading="lazy"
+            onerror="this.src='https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80';"
+          />
+          <figcaption>Tenemos máquinas de secado de madera</figcaption>
+        </figure>
       </div>
     </section>
   </main>
-
+  
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 Carpintería Juan. Todos los derechos reservados.</p>
     </div>
   </footer>
-</body>
 
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <div id="chatbot-header">Chat con Carpintería Juan <span id="chatbot-close" title="Cerrar">×</span></div>
+    <div id="chatbot-messages"></div>
+    <form id="chatbot-form">
+      <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje..." autocomplete="off" required />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- LOCUCIÓN DE BIENVENIDA -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var mensaje = "Bienvenidos a mi página web. Quédense y vean lo que mi empresa puede hacer por ustedes. Si te ha gustado, al final tienes el formulario de contacto. Le contestaremos lo antes posible. Muchas gracias";
+      if ('speechSynthesis' in window) {
+        var utterance = new SpeechSynthesisUtterance(mensaje);
+        utterance.lang = 'es-ES';
+        utterance.rate = 1;
+        utterance.pitch = 1;
+        var voces = window.speechSynthesis.getVoices();
+        for (var i = 0; i < voces.length; i++) {
+          if (voces[i].lang === 'es-ES') {
+            utterance.voice = voces[i];
+            break;
+          }
+        }
+        window.speechSynthesis.speak(utterance);
+      }
+    });
+  </script>
+  <script>
+    (function(){
+      const chatbot = document.getElementById('chatbot');
+      const closeBtn = document.getElementById('chatbot-close');
+      const messages = document.getElementById('chatbot-messages');
+      const form = document.getElementById('chatbot-form');
+      const input = document.getElementById('chatbot-input');
+
+      closeBtn.addEventListener('click', () => {
+        chatbot.style.display = 'none';
+      });
+
+      function addMessage(text, sender) {
+        const msgDiv = document.createElement('div');
+        msgDiv.textContent = text;
+        msgDiv.classList.add('message', sender);
+        messages.appendChild(msgDiv);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      function getBotResponse(text) {
+        text = text.toLowerCase();
+        if (text.includes('hola') || text.includes('buenas')) {
+          return '¡Hola! ¿En qué puedo ayudarte hoy?';
+        }
+        if (text.includes('servicio') || text.includes('trabajos')) {
+          return 'Ofrecemos carpintería a medida para hogares y negocios. ¿Quieres saber más?';
+        }
+        if (text.includes('precio') || text.includes('coste')) {
+          return 'Los precios varían según el trabajo. Puedes enviarnos un mensaje en el formulario de contacto para un presupuesto personalizado.';
+        }
+        if (text.includes('horario')) {
+          return 'Nuestro horario es de lunes a viernes de 9:00 a 18:00.';
+        }
+        if (text.includes('gracias') || text.includes('muchas gracias')) {
+          return '¡De nada! Estamos aquí para ayudarte.';
+        }
+        return 'Lo siento, no entiendo tu pregunta. Por favor, escríbenos mediante el formulario de contacto o llama al 123-456-789.';
+      }
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const userText = input.value.trim();
+        if (!userText) return;
+        addMessage(userText, 'user');
+        input.value = '';
+        setTimeout(() => {
+          const botReply = getBotResponse(userText);
+          addMessage(botReply, 'bot');
+        }, 600);
+      });
+
+      setTimeout(() => {
+        chatbot.style.display = 'flex';
+      }, 5000);
+    })();
+  </script>
+</body>
 </html>
